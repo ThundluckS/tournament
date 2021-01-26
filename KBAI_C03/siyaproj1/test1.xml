@@ -1,0 +1,32 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="YRAsTL*:ov]TmyUH]MZz">word</variable>
+  </variables>
+  <block type="init_ros_node" id="-2=5SN+ymz`4Fe~vR(4|" x="155" y="80">
+    <next>
+      <block type="start_wake_word_detector" id="6;G4N_yQV[+C:_VlNFmt">
+        <next>
+          <block type="rospy_loop" id="|ANb?wQ+bOB]MYTOVHk,">
+            <statement name="DO">
+              <block type="variables_set" id="YN#MD$4a)K;U$4T2(}9T">
+                <field name="VAR" id="YRAsTL*:ov]TmyUH]MZz">word</field>
+                <value name="VALUE">
+                  <block type="get_sound" id="y(d7}4ZAd{99zh=-)An+"></block>
+                </value>
+                <next>
+                  <block type="text_print" id="sJx8)p6e-X{R!hjayf9|">
+                    <value name="TEXT">
+                      <block type="variables_get" id="pa33dh:M8d]^/b2wrVaL">
+                        <field name="VAR" id="YRAsTL*:ov]TmyUH]MZz">word</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
