@@ -1,0 +1,175 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="d61{.[j}i/}wu/%ICuzl">voice</variable>
+  </variables>
+  <block type="init_ros_node" id="^#=gs~RYT1uvsLnF~Z^r" x="73" y="23">
+    <next>
+      <block type="start_wake_word_detector" id="=%z9b~_NS,CmtJ9g4v=s">
+        <next>
+          <block type="rospy_loop" id="nIKhg^+P/,B/bsJG5V#.">
+            <statement name="DO">
+              <block type="variables_set" id="kE`fmJvf~FPlK^:pkoZr">
+                <field name="VAR" id="d61{.[j}i/}wu/%ICuzl">voice</field>
+                <value name="VALUE">
+                  <block type="get_sound" id="nnj1zmCL]-s@8fH!,9%k"></block>
+                </value>
+                <next>
+                  <block type="controls_if" id="!R=o!:nkU6bv,Sp|llgQ">
+                    <mutation elseif="4" else="1"></mutation>
+                    <value name="IF0">
+                      <block type="logic_compare" id="capx7=C_Xp+AEEkVILpd">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="ySe$@VM`S!u*cZcP4Wa|">
+                            <field name="VAR" id="d61{.[j}i/}wu/%ICuzl">voice</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="text" id="46)${XaN,4yu#cC)fOT7">
+                            <field name="TEXT">Go</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="set_velocity" id="ucTwPFXb-k]tO)~HoU|1">
+                        <field name="LINEAR">0.1</field>
+                        <field name="ANGULAR">0</field>
+                        <next>
+                          <block type="delay" id="Y6qYC-U[H8(weH%pQGQJ">
+                            <value name="NAME">
+                              <block type="math_number" id="5$mqb:p_;QaIhxSjA2j@">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <value name="IF1">
+                      <block type="logic_compare" id="Mf{.?82A)LoZ+*$e2D2:">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="i@:.^F)kUBT^nDZv@Z?r">
+                            <field name="VAR" id="d61{.[j}i/}wu/%ICuzl">voice</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="text" id="QxLG[;p1vwMApu?*Us=M">
+                            <field name="TEXT">background</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO1">
+                      <block type="set_velocity" id="}B{k)w6^-;GMIxHB]Lxy">
+                        <field name="LINEAR">0</field>
+                        <field name="ANGULAR">0</field>
+                      </block>
+                    </statement>
+                    <value name="IF2">
+                      <block type="logic_compare" id=")|xC-Bvo_dqbF;1F54O`">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="M*$8x~nJy^Bk;)|*V:iy">
+                            <field name="VAR" id="d61{.[j}i/}wu/%ICuzl">voice</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="text" id="2J2`d-t/^X`zjsBrn=UL">
+                            <field name="TEXT">Right</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO2">
+                      <block type="set_velocity" id="+7qqDw2.L}6yIn^;7hY8">
+                        <field name="LINEAR">0</field>
+                        <field name="ANGULAR">-0.4</field>
+                        <next>
+                          <block type="delay" id="I.YRH%fh]jdEO--!/*D;">
+                            <value name="NAME">
+                              <block type="math_number" id="emtwt5qo!L*1+9!p:[ZY">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <value name="IF3">
+                      <block type="logic_compare" id="Y`k#cjwl9k.7V#^k}F}=">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id=":pCRoX,H1iSZdh$M9bg0">
+                            <field name="VAR" id="d61{.[j}i/}wu/%ICuzl">voice</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="text" id="n_~IcA$-~h=|jt{tl.Zb">
+                            <field name="TEXT">back</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO3">
+                      <block type="set_velocity" id="-YVOHJc%[~p[ySEZ.ok3">
+                        <field name="LINEAR">-0.1</field>
+                        <field name="ANGULAR">0</field>
+                        <next>
+                          <block type="delay" id="lU|tM7}.R+#b:TarCPXY">
+                            <value name="NAME">
+                              <block type="math_number" id="?#1,Exs(q;{VOiA546w+">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <value name="IF4">
+                      <block type="logic_compare" id="44E`e7EH~[29S|ypnOtB">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="morfoj)]|HYFkxq@@DNw">
+                            <field name="VAR" id="d61{.[j}i/}wu/%ICuzl">voice</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="text" id="iXU+WK)1(pA%umpDm4JI">
+                            <field name="TEXT">Left</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO4">
+                      <block type="set_velocity" id="zsJ82xH;aK3N~uE9(:]7">
+                        <field name="LINEAR">0</field>
+                        <field name="ANGULAR">0.4</field>
+                        <next>
+                          <block type="delay" id="+HgIsc@FZTp2F7zSnEHi">
+                            <value name="NAME">
+                              <block type="math_number" id="*laEyJ9u.ilRrct};pUn">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <statement name="ELSE">
+                      <block type="set_velocity" id="OWA#f?L[,qN=U%X/I#W!">
+                        <field name="LINEAR">0</field>
+                        <field name="ANGULAR">0</field>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
