@@ -1,0 +1,124 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="M,8j28Q~8j7tS^C}]wL,">voice</variable>
+  </variables>
+  <block type="init_ros_node" id="4W%IpbMu[W^--9q19K[U" x="331" y="27">
+    <next>
+      <block type="start_wake_word_detector" id="}q{],m~(cR+V/cB)e1`4">
+        <next>
+          <block type="rospy_loop" id="6oa:`$5F9]SnpqBPn/)%">
+            <statement name="DO">
+              <block type="variables_set" id="R[Nj|QajIy~YRF_q4~/^">
+                <field name="VAR" id="M,8j28Q~8j7tS^C}]wL,">voice</field>
+                <value name="VALUE">
+                  <block type="get_sound" id="PORS|H3f;MI~QHeATmOb"></block>
+                </value>
+                <next>
+                  <block type="text_print" id="CE-+SQLg6q{fz,|[]KEO">
+                    <value name="TEXT">
+                      <block type="variables_get" id="aq+L]#*AY5vOT3by}`GA">
+                        <field name="VAR" id="M,8j28Q~8j7tS^C}]wL,">voice</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="controls_if" id="R:V?y~c*6;Hq~8~clH{v">
+                        <mutation elseif="2" else="1"></mutation>
+                        <value name="IF0">
+                          <block type="logic_compare" id="E0R(QI2Kuu)sYu))^7Hf">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="variables_get" id="C2=#@Ym2c;ACO7s]$~Bk">
+                                <field name="VAR" id="M,8j28Q~8j7tS^C}]wL,">voice</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="text" id="[OGYZ|rWQ);pP]1PmKl8">
+                                <field name="TEXT">go</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="set_velocity" id="28L~QR*68UkT2`p4u{YB">
+                            <field name="LINEAR">0.1</field>
+                            <field name="ANGULAR">0</field>
+                            <next>
+                              <block type="delay" id="nRlQ.IaS+F5T~6-OUJyW">
+                                <value name="NAME">
+                                  <block type="math_number" id="ae!/*Dv7Wduqn,R$Pbx*">
+                                    <field name="NUM">2</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <value name="IF1">
+                          <block type="logic_compare" id="E;pVriEp0aS6$B~{u7yd">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="variables_get" id="b6f3bSK#Qo~9b!JiQM@u">
+                                <field name="VAR" id="M,8j28Q~8j7tS^C}]wL,">voice</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="text" id="0a+bs_x{ve#Kf[c$ZsKZ">
+                                <field name="TEXT">back</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO1">
+                          <block type="set_velocity" id="|ld,#|C5SyU9IR0rXhC(">
+                            <field name="LINEAR">-0.1</field>
+                            <field name="ANGULAR">0</field>
+                            <next>
+                              <block type="delay" id="J*S_^514vW,{od6IqP,T">
+                                <value name="NAME">
+                                  <block type="math_number" id="T8A,pnq~fYws+8=a*g8p">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <value name="IF2">
+                          <block type="logic_compare" id="PBZ((Cb2d52-,uS//c*t">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="variables_get" id=")z%b2=s9WiG.-z(A=}pz">
+                                <field name="VAR" id="M,8j28Q~8j7tS^C}]wL,">voice</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="text" id="^#LAShc%3l%KCe:vKT2a">
+                                <field name="TEXT">noise</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO2">
+                          <block type="set_velocity" id="1x1/^2xO8AxSnrm2MlxI">
+                            <field name="LINEAR">0</field>
+                            <field name="ANGULAR">0</field>
+                          </block>
+                        </statement>
+                        <statement name="ELSE">
+                          <block type="set_velocity" id="EsjDejf$ie?r!^#QA6~`">
+                            <field name="LINEAR">0</field>
+                            <field name="ANGULAR">0</field>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
